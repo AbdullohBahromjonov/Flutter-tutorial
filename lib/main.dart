@@ -17,7 +17,11 @@ class FlutterTutorialApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.deepPurple,
         ),
-         body: Center(
+         body: Padding(
+           padding: EdgeInsets.symmetric(
+             horizontal: 80,
+             vertical: 100,
+           ),
            child: IconButton(
              icon: Icon(
                Custom_Icon.youtube_svgrepo_com,
