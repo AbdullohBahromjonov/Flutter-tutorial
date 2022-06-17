@@ -17,16 +17,19 @@ class FlutterTutorialApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.deepPurple,
         ),
-        body: IconButton(
-          icon: Icon(
-            Custom_Icon.youtube_svgrepo_com,
-          ),
-          color: Colors.red,
-          iconSize: 100.0,
-          onPressed: () {
-            print("BUTTON PRESSED");
-          },
-        ),
+         body: Align(
+           child: IconButton(
+             icon: Icon(
+               Custom_Icon.youtube_svgrepo_com,
+             ),
+             color: Colors.red,
+             iconSize: 100.0,
+             onPressed: () {
+               print("BUTTON PRESSED");
+             },
+           ),
+           alignment: Alignment(0, 0),
+         ),
         floatingActionButton: FloatingActionButton(
             onPressed: null,
             child: const Text("Add"),
