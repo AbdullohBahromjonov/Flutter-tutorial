@@ -17,7 +17,7 @@ class FlutterTutorialApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.deepPurple,
         ),
-         body: Align(
+         body: Center(
            child: IconButton(
              icon: Icon(
                Custom_Icon.youtube_svgrepo_com,
@@ -28,7 +28,6 @@ class FlutterTutorialApp extends StatelessWidget {
                print("BUTTON PRESSED");
              },
            ),
-           alignment: Alignment(0, 0),
          ),
         floatingActionButton: FloatingActionButton(
             onPressed: null,
