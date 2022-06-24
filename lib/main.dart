@@ -52,13 +52,10 @@ class FlutterTutorialApp extends StatelessWidget {
            ),
            alignment: Alignment.center,
            decoration: BoxDecoration(
-             gradient: LinearGradient(
-                 colors: [
-                   Colors.purple,
-                   Colors.indigo.withOpacity(0.8),
-                   Colors.blue.withOpacity(0.7),
-                 ]
-             ),
+             image: DecorationImage(
+               image: AssetImage("assets/images/backgroundImage.jpeg"),
+               fit: BoxFit.fitHeight
+             )
            )
          ),
         floatingActionButton: const FloatingActionButton(
