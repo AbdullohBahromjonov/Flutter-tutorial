@@ -20,49 +20,48 @@ class FlutterTutorialApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: purple1,
         ),
-         body: Container(
-           child: Container(
-             child: IconButton(
-               icon: const Icon(
-                 Custom_Icon.youtube_svgrepo_com,
-               ),
-               color: purple1,
-               iconSize: 100.0,
-               onPressed: () {
-                 print("BUTTON PRESSED");
-               },
-             ),
-             decoration: BoxDecoration(
-               color: Colors.cyanAccent,
-               shape: BoxShape.circle,
-               border: Border.all(
-                 width: 5,
-                 color: purple1,
-                 style: BorderStyle.solid,
-               ),
-               boxShadow: [
-                 BoxShadow(
-                   color: Colors.black26,
-                   spreadRadius: 4,
-                   blurRadius: 20,
-                   offset: Offset(4, 3),
-                 ),
-               ],
-             ),
-           ),
-           alignment: Alignment.center,
-           decoration: BoxDecoration(
-             image: DecorationImage(
-               image: AssetImage("assets/images/backgroundImage.jpeg"),
-               fit: BoxFit.fitHeight
-             )
-           )
-         ),
+        body: Column (
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: const [
+            CustomContainer(30, "Cyan", 10, Colors.cyan),
+            CustomContainer(40, "Purple", 20, Colors.purple),
+            CustomContainer(50, "Yellow", 30, Colors.yellow),
+          ],
+        ),
         floatingActionButton: const FloatingActionButton(
             onPressed: null,
             child: Text("Add"),
             backgroundColor: purple1,
         ),
+      ),
+    );
+  }
+}
+
+class CustomContainer extends StatelessWidget{
+  final double paddingNumber;
+  final String textString;
+  final double textSize;
+  final Color containerColor;
+
+  const CustomContainer(this.paddingNumber, this.textString, this.textSize, this.containerColor);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Text(textString,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: textSize,
+          ),
+        ),
+      ),
+      padding: EdgeInsets.all(paddingNumber),
+      decoration: BoxDecoration(
+        color: containerColor,
+        shape: BoxShape.circle,
       ),
     );
   }
