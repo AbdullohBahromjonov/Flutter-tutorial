@@ -20,13 +20,14 @@ class FlutterTutorialApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: purple1,
         ),
-        body: Column (
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        body: Row (
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.ideographic,
           children: const [
             CustomContainer(30, "Cyan", 10, Colors.cyan),
-            CustomContainer(40, "Purple", 20, Colors.purple),
-            CustomContainer(50, "Yellow", 30, Colors.yellow),
+            CustomContainer(40, "Purple", 10, Colors.purple),
+            CustomContainer(50, "Yellow", 10, Colors.yellow),
           ],
         ),
         floatingActionButton: const FloatingActionButton(
