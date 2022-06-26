@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_tutorial/custom_icon.dart';
 
-const purple1 = const Color.fromRGBO(106, 103, 206, 1);
-const yellowAccent = const Color.fromRGBO(238, 243, 210, 1);
+const purple1 = Color.fromRGBO(106, 103, 206, 1);
+const yellowAccent = Color.fromRGBO(238, 243, 210, 1);
 
 void main() {
   runApp(FlutterTutorialApp());
 }
 
 class FlutterTutorialApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,15 +19,19 @@ class FlutterTutorialApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: purple1,
         ),
-        body: Row (
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.baseline,
-          textBaseline: TextBaseline.ideographic,
-          children: const [
-            CustomContainer(30, "Cyan", 10, Colors.cyan),
-            CustomContainer(40, "Purple", 10, Colors.purple),
-            CustomContainer(50, "Yellow", 10, Colors.yellow),
-          ],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              CustomContainer("Hello, World", 20, Colors.greenAccent),
+
+              SizedBox(
+                height: 40,
+              ),
+
+              CustomContainer("Hello, World 2", 20, Colors.blue),
+            ],
+          ),
         ),
         floatingActionButton: const FloatingActionButton(
             onPressed: null,
@@ -41,29 +44,31 @@ class FlutterTutorialApp extends StatelessWidget {
 }
 
 class CustomContainer extends StatelessWidget{
-  final double paddingNumber;
   final String textString;
   final double textSize;
   final Color containerColor;
 
-  const CustomContainer(this.paddingNumber, this.textString, this.textSize, this.containerColor);
+  const CustomContainer(this.textString, this.textSize, this.containerColor,);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(textString,
+    return SizedBox.fromSize(
+      size: const Size(200, 200),
+      child: Container(
+        child: Text(
+          textString,
           style: TextStyle(
-            fontWeight: FontWeight.bold,
             fontSize: textSize,
+            fontWeight: FontWeight.bold,
+            fontFamily: "RobotoMono"
           ),
         ),
+        padding: const EdgeInsets.all(10.0),
+        decoration: BoxDecoration(
+          color: containerColor,
+        ),
       ),
-      padding: EdgeInsets.all(paddingNumber),
-      decoration: BoxDecoration(
-        color: containerColor,
-        shape: BoxShape.circle,
-      ),
+      //padding: const EdgeInsets.all(20),
     );
   }
 }
