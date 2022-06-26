@@ -23,13 +23,18 @@ class FlutterTutorialApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
-              CustomContainer("Hello, World", 20, Colors.greenAccent),
+              Expanded(
+                flex: 2,
+                child: CustomContainer("Hello, World", 20, Colors.greenAccent),
+              ),
 
               SizedBox(
                 height: 40,
               ),
 
-              CustomContainer("Hello, World 2", 20, Colors.blue),
+              Expanded(
+                child: CustomContainer("Hello, World 2", 20, Colors.blue),
+              ),
             ],
           ),
         ),
