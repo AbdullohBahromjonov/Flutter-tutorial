@@ -20,21 +20,11 @@ class FlutterTutorialApp extends StatelessWidget {
           backgroundColor: purple1,
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Expanded(
-                flex: 2,
-                child: CustomContainer("Hello, World", 20, Colors.greenAccent),
-              ),
-
-              SizedBox(
-                height: 40,
-              ),
-
-              Expanded(
-                child: CustomContainer("Hello, World 2", 20, Colors.blue),
-              ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              CustomContainer(400, "1", 10, Colors.cyan),
+              CustomContainer(300, "2", 10, Colors.deepPurpleAccent),
             ],
           ),
         ),
@@ -49,16 +39,17 @@ class FlutterTutorialApp extends StatelessWidget {
 }
 
 class CustomContainer extends StatelessWidget{
+  final double sizeOfSquare;
   final String textString;
   final double textSize;
   final Color containerColor;
 
-  const CustomContainer(this.textString, this.textSize, this.containerColor,);
+  const CustomContainer(this.sizeOfSquare, this.textString, this.textSize, this.containerColor,);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox.fromSize(
-      size: const Size(200, 200),
+      size: Size.square(sizeOfSquare),
       child: Container(
         child: Text(
           textString,
