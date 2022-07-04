@@ -4,10 +4,12 @@ const purple1 = Color.fromRGBO(106, 103, 206, 1);
 const yellowAccent = Color.fromRGBO(238, 243, 210, 1);
 
 void main() {
-  runApp(FlutterTutorialApp());
+  runApp(const FlutterTutorialApp());
 }
 
 class FlutterTutorialApp extends StatelessWidget {
+  const FlutterTutorialApp({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +24,13 @@ class FlutterTutorialApp extends StatelessWidget {
         body: Center(
           child: Stack(
             alignment: Alignment.center,
-            children: [
+            children: const [
               CustomContainer(400, "1", 10, Colors.cyan),
-              CustomContainer(300, "2", 10, Colors.deepPurpleAccent),
+              Positioned(
+                top: 20,
+                left: 20,
+                child: CustomContainer(300, "2", 10, Colors.deepPurpleAccent),
+              ),
             ],
           ),
         ),
